@@ -1,15 +1,8 @@
 {
     "source": "github",
-    "owner": "adioo",
-    "name": "bind-list",
+    "owner": "jillix",
+    "name": "filters",
     "main": "main.js",
     "dependencies": {
-        "github/adioo/bind": "v0.2.0"
-    },
-    "operations": [
-        { "file": "operations.js", "function": "create" },
-        { "file": "operations.js", "function": "read" },
-        { "file": "operations.js", "function": "update" },
-        { "file": "operations.js", "function": "remove" }
-    ]
+    }
 }
