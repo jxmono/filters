@@ -1,4 +1,4 @@
-define(function() {
+define(["github/adioo/events/v0.1.0/events"], function(Events) {
 
     var self = null;
 
@@ -19,25 +19,7 @@ define(function() {
 
         self.mergeCategoryFilter = mergeCategoryFilter;
 
-        // for each module instance I listen to
-        for (var miid in config.listen) {
-            var miidEvents = config.listen[miid];
-            // for each event for this instance
-            for (var name in miidEvents) {
-                var handler = miidEvents[name];
-                // if the handler is a module function name
-                if (typeof handler === "string" && typeof self[handler] === "function") {
-                    self.on(name, miid, function(data) {
-                        self[handler].call(self, data);
-                    });
-                    continue;
-                }
-                // else it must be object
-                if (handler instanceof Object) {
-                    // TODO
-                }
-            }
-        }
+        Events.call(self, config);
     }
 
     return init;
