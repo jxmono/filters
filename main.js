@@ -1,4 +1,4 @@
-define(["github/adioo/events/v0.1.0/events"], function(Events) {
+define(["github/adioo/events/v0.1.2/events"], function(Events) {
 
     var self = null;
 
