@@ -5,7 +5,8 @@ define(["github/adioo/events/v0.1.2/events"], function(Events) {
     var filter = {};
 
     function mergeCategoryFilter(data) {
-        filter.category = data.id;
+        
+        filter.category = data ? data.id : undefined;
         self.emit("filterChanged", filter);
     }
 
