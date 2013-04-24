@@ -3,8 +3,8 @@
     "owner": "jillix",
     "name": "filters",
     "main": "main.js",
-    "dependencies": {
+    "dependencies": [
         "/main.js",
         "github/adioo/events/v0.2.0"
-    }
+    ]
 }
