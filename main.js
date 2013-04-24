@@ -7,7 +7,7 @@ module.exports = function (config) {
 
     function mergeCategoryFilter (data) {
         filter.category = data.id;
-        self.emit('filterChanged', filter);
+        filter.category = data ? data.id : undefined;
     }
 
     function mergeSearchFilter(data) {
