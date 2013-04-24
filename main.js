@@ -1,27 +1,21 @@
-define(["github/adioo/events/v0.1.2/events"], function(Events) {
+var Events = require('github/adioo/events');
 
-    var self = null;
+module.exports = function (config) {
 
+    var self = this;
     var filter = {};
 
-    function mergeCategoryFilter(data) {
+    function mergeCategoryFilter (data) {
         filter.category = data.id;
-        self.emit("filterChanged", filter);
+        self.emit('filterChanged', filter);
     }
 
     function mergeSearchFilter(data) {
         // TODO
     }
 
-    function init(config) {
+    self.mergeCategoryFilter = mergeCategoryFilter;
 
-        self = this;
-
-        self.mergeCategoryFilter = mergeCategoryFilter;
-
-        Events.call(self, config);
-    }
-
-    return init;
-});
+    Events.call(self, config);
+};
 

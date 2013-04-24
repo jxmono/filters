@@ -4,6 +4,7 @@
     "name": "filters",
     "main": "main.js",
     "dependencies": {
-        "github/adioo/events": "v0.1.2"
+        "/main.js",
+        "github/adioo/events/v0.2.0"
     }
 }
