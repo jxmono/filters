@@ -6,15 +6,17 @@ module.exports = function (config) {
     var filter = {};
 
     function mergeCategoryFilter (data) {
-        filter.category = data.id;
         filter.category = data ? data.id : undefined;
+        self.emit('filterChanged', filter);
     }
 
-    function mergeSearchFilter(data) {
+    function mergeSearchFilter (data) {
         // TODO
+        self.emit('filterChanged', filter);
     }
 
     self.mergeCategoryFilter = mergeCategoryFilter;
+    self.mergeSearchFilter = mergeSearchFilter;
 
     Events.call(self, config);
 };
