@@ -1,4 +1,4 @@
-var Events = require('github/adioo/events');
+var Events = require('github/jillix/events');
 
 module.exports = function (config) {
 
