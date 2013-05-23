@@ -11,7 +11,17 @@ module.exports = function (config) {
     }
 
     function mergeSearchFilter (data) {
-        // TODO
+        for (var i in data) {
+            switch (i) {
+                case 'priceRange':
+                    // priceRange is a 2-element array
+                    filter.price = {
+                        $gte: data[i][0],
+                        $lte: data[i][1]
+                    }
+                    break;
+            }
+        }
         self.emit('filterChanged', filter);
     }
 
