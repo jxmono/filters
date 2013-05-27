@@ -3,7 +3,7 @@
     "owner": "jillix",
     "name": "filters",
     "dependencies": [
-        "/main.js",
+        "/filters.js",
         "github/jillix/events/v0.1.0"
     ]
 }
