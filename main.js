@@ -11,6 +11,10 @@ module.exports = function (config) {
     }
 
     function mergeSearchFilter (data) {
+
+        // TODO move hardcoded filter keys to configuration
+        delete filter['type'];
+
         for (var i in data) {
             switch (i) {
                 case 'priceRange':
@@ -19,6 +23,9 @@ module.exports = function (config) {
                         $gte: data[i][0],
                         $lte: data[i][1]
                     }
+                    break;
+                case 'type':
+                    filter.type = data.type;
                     break;
             }
         }
