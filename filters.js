@@ -31,7 +31,7 @@ module.exports = function (config) {
                     if (!data.text) {
                         delete filter.description;
                     } else {
-                        filter.description = { "$regex" : ".*" + data.text.split(" ").join(".*") + ".*"} ;
+                        filter.description = { $regex : ".*" + data.text.split(" ").join(".*") + ".*", $options: "i" } ;
                     }
                     break;
             }
@@ -44,3 +44,4 @@ module.exports = function (config) {
 
     Events.call(self, config);
 };
+
