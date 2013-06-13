@@ -44,4 +44,3 @@ module.exports = function (config) {
 
     Events.call(self, config);
 };
-
