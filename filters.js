@@ -20,8 +20,8 @@ module.exports = function (config) {
                 case "priceRange":
                     // priceRange is a 2-element array
                     filter.price = {
-                        $gte: data[i][0],
-                        $lte: data[i][1]
+                        $gte: data[i][0] * 100,
+                        $lte: data[i][1] * 100
                     }
                     break;
                 case "type":
