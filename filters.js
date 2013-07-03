@@ -6,8 +6,17 @@ module.exports = function (config) {
     var filter = {};
 
     function mergeCategoryFilter (data) {
-        filter.category = data ? data.id : undefined;
-        self.emit("filterChanged", filter);
+        // TODO the following logic is vulnerable when id === 0
+        var oldCat = filter.category;
+        var newCat = data ? data.id : undefined;
+        if (oldCat !== newCat) {
+            if (newCat) {
+                filter.category = newCat;
+            } else {
+                delete filter.category;
+            }
+            self.emit("filterChanged", filter);
+        }
     }
 
     function mergeSearchFilter (data) {
@@ -39,8 +48,14 @@ module.exports = function (config) {
         self.emit("filterChanged", filter);
     }
 
+    function clearFilters () {
+        filter = {};
+        self.emit("filterChanged", filter);
+    }
+
     self.mergeCategoryFilter = mergeCategoryFilter;
     self.mergeSearchFilter = mergeSearchFilter;
+    self.clearFilters = clearFilters;
 
     Events.call(self, config);
 };
