@@ -38,7 +38,7 @@ module.exports = function (config) {
                     break;
                 case "text":
                     if (!data.text) {
-                        delete filter.description;
+                        delete filter["$or"];
                     } else {
                         filter["$or"] = [
                             {
