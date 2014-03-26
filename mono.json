@@ -4,6 +4,6 @@
     "name": "filters",
     "dependencies": [
         "/filters.js",
-        "github/jillix/events/v0.1.1"
+        "github/jillix/events/v0.1.8"
     ]
 }
